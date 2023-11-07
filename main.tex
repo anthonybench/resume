@@ -1,0 +1,165 @@
+%-------------------------------------------------------------------------------
+%                             PREAMBLE
+%-------------------------------------------------------------------------------
+\documentclass[
+  a4paper, 
+]{FormatDetails}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% take care of proper font encoding
+\ifxetex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX}
+\else
+    % \newfontfamily\headingfont[Path = fonts/]{JetBrainsMono/JetBrainsMono-ExtraBold.ttf} % local font
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+% \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+    % default font size is \large, so adjust to harmonize with sidebar layout
+    bubble center node font = \footnotesize,
+    bubble node font = \footnotesize,
+    % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+    bubble center node size = 0.4\sidebartextwidth,
+    bubble node size = 0.25\sidebartextwidth,
+    distance center/other bubbles = 1.5em,
+    % set center bubble color
+    bubble center node color = bubbcolor!70,
+    % define the list of colors usable in the diagram
+    set color list = {bubbcolor!10, bubbcolor!40,
+    bubbcolor!20, bubbcolor!60, bubbcolor!35},
+    % sets the opacity at which the bubbles are shown
+    bubble fill opacity = 0.8,
+}
+
+% pdf metadata setting
+\usepackage{hyperref}
+\hypersetup{
+            pdfauthor={Isaac A.B. Yep},
+            pdftitle={Isaac Yep Professional Resume},
+            pdfsubject={Isaac's Custom-authored LaTeX Resume},
+            pdfkeywords={data engineering artificial intelligence ai ml machine learning ui/ux design databases database automation automate data pipeline jenkins spark pandas s3 ec2 ecs containers orchestration ml ops rds glue cloudwatch cloudformation cloud big data analytics data science data analysis security senior lead etl extract transform load reporting business insights},
+}
+
+%-------------------------------------------------------------------------------
+%                            SIDEBAR :: PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+% portrait
+\cvprofilepic{img/portraits/professional.png}
+% name
+\cvname{Isaac A.B. Yep}
+
+% personal website
+% \cvportfolio{https://sleepyblog.com}
+% email
+\cvaddress{anthonybenchyep@gmail.com}
+% linkedin
+\cvlinkedin{linkedin.com/in/anthonybench}
+% github
+\cvgithub{github.com/anthonybench}
+% phone number
+\cvphone{1 (907) 444-3088}
+% location
+\cvlocal{Vancouver, WA 98682}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR :: LANGUAGES & FRAMEWORKS
+%-------------------------------------------------------------------------------
+\addtofrontsidebar{
+    \graphicspath{{img/}}
+    
+    \profilesection{Languages}
+        \pointskill{\flag{languages/python.png}}{Python}{5}
+        \pointskill{\flag{languages/sql.png}}{SQL}{5}
+        \pointskill{\flag{languages/bash.png}}{Shell}{4}
+        \pointskill{\flag{languages/js.png}}{HTML/CSS/JS}{3}
+        \pointskill{\flag{languages/c_sharp.png}}{C\#}{2}
+        \pointskill{\flag{languages/cpp.png}}{C/C++}{2}
+        
+    \profilesection{Frameworks}
+        \skill{\cad{frameworks/aws.png}}{\hspace{0.5cm}AWS}
+        \skill{\cad{frameworks/terraform.png}}{\hspace{0.5cm}Terraform}
+        \skill{\cad{frameworks/databricks.png}}{\hspace{0.5cm}Databricks}
+        \skill{\cad{frameworks/react.png}}{\hspace{0.5cm}React}
+        \skill{\cad{frameworks/dotnet.png}}{\hspace{0.5cm}.NET Core}
+        \skill{\cad{frameworks/sql_server.png}}{\hspace{0.5cm}MS SQL Server}
+        \skill{\cad{frameworks/mongodb.png}}{\hspace{0.5cm}MongoDB}
+        \skill{\cad{frameworks/docker.png}}{\hspace{0.5cm}Docker}
+}
+\begin{document}
+\makefrontsidebar
+
+
+%-------------------------------------------------------------------------------
+%                         MAIN SECTION :: EDUCATION
+%-------------------------------------------------------------------------------
+\cvsection{Education}
+\begin{cvtable}
+    % UAA - BS.ME
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.16]{img/education/uaa.png}}{BS. Mechanical Engineering}{Awarded 2016}{Minor in Mathematics, Minor in Physics, Research in vertical axis wind turbine development with field work.}
+    % UAA - BS.IDMP
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.16]{img/education/uaa.png}}{BSID. Mathematical Physics}{Awarded 2019}{Research in plasma physics with presentation at APS convention, Research in climate change / atmospheric physics sensors development and testing with pending research paper publication.}
+    % PSU - Post-bacc
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.16]{img/education/psu.png}}{Computer Science Post-Baccalaureate}{Awarded 2020}{Have completed a post-bacc program with a 4.0 GPA, having taken all essential data structures and fundamentals courses along with all upper division courses. Concurrently was an IT volunteer contributing to a live Laravel application on a back-end web development team.}
+    % PSU - Comp-sci
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.16]{img/education/psu.png}}{MS. Computer Science}{Currently Studying}{Currently maintaining a 4.0 GPA, with a focus on DevOps \& Data Engineering.}
+\end{cvtable}
+
+
+%-------------------------------------------------------------------------------
+%                         MAIN SECTION :: EXPERIENCE
+%-------------------------------------------------------------------------------
+\cvsection{Experience}
+\begin{cvtable}
+    % Halcyon - Data Engineer
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.16]{img/experience/halcyon.png}}{Data Engineer}{Data Engineering and Analytics}
+    {Developed and maintained ETL pipelines for analytics reporting in Databricks as an admin. Managed several aspects of our Databricks workspace and provisioned requisite cloud assets.}
+    % beadedstream - Frontend Engineer
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.16]{img/experience/beadedstream.png}}{Frontend Engineer}{DevOps and UI/UX}
+    {Developed and maintained ETL pipelines for analytics reporting in Databricks as an admin. Managed several aspects of our Databricks workspace and provisioned requisite cloud assets.}
+    % BlackBerry - Associate Database Automation Engineer
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.12]{img/experience/blackberry.png}}{Associate Database Automation Engineer}{DevOps and Data Engineering}
+    {Member of the Data Architecture team headquartered in Portland, OR. Developed automations for data pipelines at enterprise scale, and DevOps solutions in a fluid stack. Databricks admin for 7 separate workspaces.}
+    % BlackBerry - Internship
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.12]{img/experience/blackberry.png}}{Data Architecture Intern}{DevOps \& Data Engineering}
+    {Worked with a large and dynamic automation and CI/CD stack in service of data aggregation and visualization. Contributed to and developed DevOps solutions.}
+    % NASA - Internship #2
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.03]{img/experience/nasa_chevron.png}}{Data Software Engineering Intern}{Data Engineering \& Architecture}
+    {Developed a data retrieval and analysis virtual instrument for core-stage rocket engine test data pipeline, and demonstrated software tooling and deployment for security standards by QC Engineer panel at \textit{NASA; Stennis Space Center}.}
+    % NASA - Internship #1
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.03]{img/experience/nasa_chevron.png}}{Full Stack Software Engineering Intern}{Software Engineering}
+    {Completed a software engineering internship term at \textit{NASA; Stennis Space Center} for the summer of 2020, where I solo-developed a full stack application that manages a COTS software inventory, and shadowed an agile development team.}
+\end{cvtable}
+
+
+%-------------------------------------------------------------------------------
+%                         MAIN SECTION :: Certifications
+%-------------------------------------------------------------------------------
+\cvsection{Certifications}
+\begin{cvtable}
+    % NCEES - EIT
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.12]{img/certifications/ncees.png}}{Mechanical Engineering E.I.T.}{FEA Exam}
+    {NCEES FEA exam to be certified as a Mechanical Engineer I.T.}
+\end{cvtable}
+
+\cvsignature
+\end{document}
