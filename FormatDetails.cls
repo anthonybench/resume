@@ -28,7 +28,7 @@
     % - left column headers
 \definecolor{leftcolumnbackground}{HTML}{E7E7E7}
     % - left column background
-\definecolor{portraitborder}{HTML}{4C4C6D}
+\definecolor{portraitborder}{HTML}{154BA3}
     % - portrait border
 \definecolor{rightcolumnheaders}{HTML}{154ba3}
     % - right column headers
@@ -247,7 +247,7 @@
 \newcommand*{\cvgithub}[1]{\cvcustomdata{\faGithub}{\href{#1}{#1}}}
 \newcommand*{\cvaddress}[1]{\cvcustomdata{\faEnvelope}{#1}}
 \newcommand*{\cvphone}[1]{\cvcustomdata{\faPhone}{#1}}
-\newcommand*{\cvlocal}[1]{\cvcustomdata{\faGlobe}{#1}}
+\newcommand*{\cvpersonal}[1]{\cvcustomdata{\faGlobe}{\href{#1}{#1}}}
 \newcommand*{\cvmail}[1]{\cvcustomdata{\faAt}{\href{mailto:#1}{#1}}}
 \newcommand*{\cvportfolio}[1]{\cvcustomdata{\faHeart}{#1}}
 \newcommand*{\cvkey}[2]{\cvcustomdata{\faKey}{
@@ -283,6 +283,8 @@
                 (1, 1) [sharp corners] --
                 (1, 0) [rounded corners=0.15\sidebartextwidth] -- cycle;
             \end{scope}
+
+            
         \end{tikzpicture}
     \end{figure}
 }
@@ -440,19 +442,6 @@
                 arc (-\newcumnum:-(\cumnum):\innerradius) 
                 -- cycle;
 
-            % Draw the data labels
-            \draw [*-,thin,wheelchartlabelcolor] node [append after command={
-                (\midangle:\midradius pt) -- 
-                (\midangle:\outerradius + 1ex) -- 
-                (\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [
-                    xshift=\labelshiftdir*0.5cm,inner sep=1ex, 
-                    outer sep=0pt, 
-                    text width=\width,
-                    anchor=\textanchor,
-                    align=\textalign,
-                    font=\small,
-                    text=wheeltextcolor
-                ]{\name};
             % Set the old cumulated angle to the new value
             \global\let\cumnum=\newcumnum
         }
@@ -585,3 +574,11 @@
 		\textbf{#1} \par \textit{#2} \par #3 \vspace{\parsep}
 	}\\
 }
+
+% certification table
+\newlength{\certhpadding}
+\newlength{\certvpadding}
+\newcommand{\certpadding}[0]{\vspace{\certvpadding}\hspace{\certhpadding}}
+\newcommand{\certcell}[2]{\certpadding\textbf{#1} - \textit{#2}\certpadding}
+\setlength{\certhpadding}{0.08cm}
+\setlength{\certvpadding}{0.05cm}

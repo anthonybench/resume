@@ -1,6 +1,8 @@
 # <img alt="LaTeX logo" src="https://i.imgur.com/FojJMiQ.png" width="180" style="padding-right:10px" /> <img alt="LaTeX logo" src="https://i.imgur.com/nxrayFX.png" width="40" style="padding-bottom:15px" /> <img alt="LaTeX logo" src="https://i.imgur.com/vNEW7vO.png" width="100" />
 *My personally written guide for typesetting LaTeX documents in Overleaf.*
 
+You can view my resume [here](https://sleepyblog.org/about) 😊
+
 <br />
 
 ## **Table of Contents**

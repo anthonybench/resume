@@ -1,6 +1,6 @@
-%-------------------------------------------------------------------------------
-%                             PREAMBLE
-%-------------------------------------------------------------------------------
+%═══════════════════════════╗
+%  PREAMBLE                 ║
+%═══════════════════════════╝
 \documentclass[
   a4paper, 
 ]{FormatDetails}
@@ -8,6 +8,7 @@
 % improve word spacing and hyphenation
 \usepackage{microtype}
 \usepackage{ragged2e}
+\usepackage{transparent}
 
 % take care of proper font encoding
 \ifxetex
@@ -45,12 +46,13 @@
             pdfauthor={Isaac A.B. Yep},
             pdftitle={Isaac Yep Professional Resume},
             pdfsubject={Isaac's Custom-authored LaTeX Resume},
-            pdfkeywords={data engineering artificial intelligence ai ml machine learning ui/ux design databases database automation automate data pipeline jenkins spark pandas s3 ec2 ecs containers orchestration ml ops rds glue cloudwatch cloudformation cloud big data analytics data science data analysis security senior lead etl extract transform load reporting business insights},
+            pdfkeywords={\keywords},
 }
 
-%-------------------------------------------------------------------------------
-%                            SIDEBAR :: PERSONAL INFORMATION
-%-------------------------------------------------------------------------------
+
+%═══════════════════════════╗
+%  SIDEBAR : Personal Info  ║
+%═══════════════════════════╝
 % portrait
 \cvprofilepic{img/portraits/professional.png}
 % name
@@ -59,20 +61,16 @@
 % personal website
 % \cvportfolio{https://sleepyblog.com}
 % email
-\cvaddress{anthonybenchyep@gmail.com}
-% linkedin
-\cvlinkedin{linkedin.com/in/anthonybench}
-% github
-\cvgithub{github.com/anthonybench}
-% phone number
 \cvphone{1 (907) 444-3088}
-% location
-\cvlocal{Vancouver, WA 98682}
+\cvaddress{anthonybenchyep@gmail.com}
+\cvlinkedin{linkedin.com/in/anthonybench}
+\cvgithub{github.com/anthonybench}
+\cvpersonal{sleepyblog.org/about}
 
 
-%-------------------------------------------------------------------------------
-%                              SIDEBAR :: LANGUAGES & FRAMEWORKS
-%-------------------------------------------------------------------------------
+%═══════════════════════════╗
+%  SIDEBAR : Technologies   ║
+%═══════════════════════════╝
 \addtofrontsidebar{
     \graphicspath{{img/}}
     
@@ -98,43 +96,23 @@
 \makefrontsidebar
 
 
-%-------------------------------------------------------------------------------
-%                         MAIN SECTION :: EDUCATION
-%-------------------------------------------------------------------------------
-\cvsection{Education}
-\begin{cvtable}
-    % UAA - BS.ME
-    \vspace{2mm}
-    \cvitem{\centering\includegraphics[scale=0.16]{img/education/uaa.png}}{BS. Mechanical Engineering}{Awarded 2016}{Minor in Mathematics, Minor in Physics, Research in vertical axis wind turbine development with field work.}
-    % UAA - BS.IDMP
-    \vspace{2mm}
-    \cvitem{\centering\includegraphics[scale=0.16]{img/education/uaa.png}}{BSID. Mathematical Physics}{Awarded 2019}{Research in plasma physics with presentation at APS convention, Research in climate change / atmospheric physics sensors development and testing with pending research paper publication.}
-    % PSU - Post-bacc
-    \vspace{2mm}
-    \cvitem{\centering\includegraphics[scale=0.16]{img/education/psu.png}}{Computer Science Post-Baccalaureate}{Awarded 2020}{Have completed a post-bacc program with a 4.0 GPA, having taken all essential data structures and fundamentals courses along with all upper division courses. Concurrently was an IT volunteer contributing to a live Laravel application on a back-end web development team.}
-    % PSU - Comp-sci
-    \vspace{2mm}
-    \cvitem{\centering\includegraphics[scale=0.16]{img/education/psu.png}}{MS. Computer Science}{Currently Studying}{Currently maintaining a 4.0 GPA, with a focus on DevOps \& Data Engineering.}
-\end{cvtable}
-
-
-%-------------------------------------------------------------------------------
-%                         MAIN SECTION :: EXPERIENCE
-%-------------------------------------------------------------------------------
+%═══════════════════════════╗
+%  MAIN : Experience        ║
+%═══════════════════════════╝
 \cvsection{Experience}
 \begin{cvtable}
     % Halcyon - Data Engineer
     \vspace{2mm}
     \cvitem{\centering\includegraphics[scale=0.16]{img/experience/halcyon.png}}{Data Engineer}{Data Engineering and Analytics}
-    {Developed and maintained ETL pipelines for analytics reporting in Databricks as an admin. Managed several aspects of our Databricks workspace and provisioned requisite cloud assets.}
+    {Developed and maintained ETL pipelines for analytics, reporting and ml workflows in Databricks as an admin. Managed several aspects of our Databricks workspace and managed requisite cloud assets, contributed to production model development.}
     % beadedstream - Frontend Engineer
     \vspace{2mm}
-    \cvitem{\centering\includegraphics[scale=0.16]{img/experience/beadedstream.png}}{Frontend Engineer}{DevOps and UI/UX}
-    {Developed and maintained ETL pipelines for analytics reporting in Databricks as an admin. Managed several aspects of our Databricks workspace and provisioned requisite cloud assets.}
+    \cvitem{\centering\includegraphics[scale=0.16]{img/experience/beadedstream.png}}{DevOps Engineer}{DevOps, ML-Ops, UI/UX}
+    {Helped develop the POC and MVP of a new ml product in an industrial application. Developed the production model runtime, assisted with the training workflow, spec'd and built data pipeline for model training and deployment. Managed cloud architecture for feature and contributed to frontend customer-facing implementation.}
     % BlackBerry - Associate Database Automation Engineer
     \vspace{2mm}
     \cvitem{\centering\includegraphics[scale=0.12]{img/experience/blackberry.png}}{Associate Database Automation Engineer}{DevOps and Data Engineering}
-    {Member of the Data Architecture team headquartered in Portland, OR. Developed automations for data pipelines at enterprise scale, and DevOps solutions in a fluid stack. Databricks admin for 7 separate workspaces.}
+    {Member of the Data Architecture team. Automated data pipelines at enterprise scale, and DevOps solutions in a dynamic stack. Databricks admin for 7 workspaces across several regions.}
     % BlackBerry - Internship
     \vspace{2mm}
     \cvitem{\centering\includegraphics[scale=0.12]{img/experience/blackberry.png}}{Data Architecture Intern}{DevOps \& Data Engineering}
@@ -142,24 +120,93 @@
     % NASA - Internship #2
     \vspace{2mm}
     \cvitem{\centering\includegraphics[scale=0.03]{img/experience/nasa_chevron.png}}{Data Software Engineering Intern}{Data Engineering \& Architecture}
-    {Developed a data retrieval and analysis virtual instrument for core-stage rocket engine test data pipeline, and demonstrated software tooling and deployment for security standards by QC Engineer panel at \textit{NASA; Stennis Space Center}.}
+    {Developed a data retrieval and analysis virtual instrument for core-stage rocket engine test data pipeline, and demonstrated software tooling and deployment per security standards governed by a QC Engineer panel at \textit{NASA; Stennis Space Center}.}
     % NASA - Internship #1
     \vspace{2mm}
     \cvitem{\centering\includegraphics[scale=0.03]{img/experience/nasa_chevron.png}}{Full Stack Software Engineering Intern}{Software Engineering}
-    {Completed a software engineering internship term at \textit{NASA; Stennis Space Center} for the summer of 2020, where I solo-developed a full stack application that manages a COTS software inventory, and shadowed an agile development team.}
+    {First software engineering internship, at \textit{NASA; Stennis Space Center} for the summer of 2020, where I developed a full stack application that manages a COTS software inventory, and shadowed an agile development team.}
 \end{cvtable}
 
+\textit{\href{https://linkedin.com/in/anthonybench}{(See more on my LinkedIn)}}
 
-%-------------------------------------------------------------------------------
-%                         MAIN SECTION :: Certifications
-%-------------------------------------------------------------------------------
-\cvsection{Certifications}
+%═══════════════════════════╗
+%  MAIN : Education         ║
+%═══════════════════════════╝
+\cvsection{Education}
 \begin{cvtable}
-    % NCEES - EIT
+    % UAA - BS.ME
     \vspace{2mm}
-    \cvitem{\centering\includegraphics[scale=0.12]{img/certifications/ncees.png}}{Mechanical Engineering E.I.T.}{FEA Exam}
-    {NCEES FEA exam to be certified as a Mechanical Engineer I.T.}
+    \cvitem{\centering\includegraphics[scale=0.16]{img/education/uaa.png}}{BS. Mechanical Engineering}{Awarded 2016}{First minor in mathematics, second minor in physics, research in vertical axis wind turbine development with field work.}
+    % UAA - BS.IDMP
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.16]{img/education/uaa.png}}{BSID. Mathematical Physics}{Awarded 2019}{Research in plasma physics with presentation at american physics society convention, Research in atmospheric physics with co2 sensors development and testing with research paper publication.}
+    % PSU - Post-bacc
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.16]{img/education/psu.png}}{Computer Science Post-Baccalaureate}{Awarded 2020}{Have completed a post-bacc program with a 4.0 GPA, having taken all essential data structures and fundamentals courses along with all upper division courses. Was concurrently an IT volunteer contributing to a live Laravel PHP application on a back-end web development team.}
+    % PSU - Comp-sci
+    \vspace{2mm}
+    \cvitem{\centering\includegraphics[scale=0.16]{img/education/snhu.png}}{MS. Data Analytics}{Currently Studying}{Currently maintaining a 4.0 GPA, with a focus on DevOps \& Data Engineering.}
 \end{cvtable}
+
+
+%═══════════════════════════╗
+%  MAIN : Certifications    ║
+%═══════════════════════════╝
+\cvsection{Certifications}
+
+% %% dumb
+% \certcell{NCEES}{Mechanical Engineering E.I.T.}
+% \certcell{JLPT}{N5}
+% %% misc
+% \certcell{Comptia}{Cloud Essentials+}
+% \certcell{PCEP}{Python Professional 1}
+% \certcell{Hashicorp}{Terraform Associate}
+% %% databricks
+% \certcell{Databricks}{Data Engineer Professional}
+% \certcell{Databricks}{Data Analyst Associate}
+% \certcell{Databricks}{Machine Learning Associate}
+% %% aws
+% \certcell{AWS}{Cloud Practitioner}
+% \certcell{AWS}{SysOps Administrator Associate}
+% \certcell{AWS}{DevOps Engineer Professional}
+
+\begin{tabular}{p{0.5\textwidth}|p{0.5\textwidth}}
+    %%───CURRENT
+    \certcell{NCEES}{Mechanical Engineering E.I.T.}
+    &
+    % \certcell{Hashicorp}{Terraform Associate}
+    % \\ \hline
+    % \certcell{PCEP}{Python Associate}
+    % &
+    % \certcell{Comptia}{Cloud Essentials+}
+    % \\ \hline
+    % \certcell{Databricks}{Data Analyst Associate}
+    % &
+    % \certcell{Databricks}{Data Engineer Associate}
+    % \\ \hline
+    % \certcell{AWS}{Cloud Practitioner}
+    % &
+    \certcell{JLPT}{N5}
+    \\
+
+    %%───END GAME
+    % \certcell{CompTIA}{Cloud Essentials+}
+    % &
+    % \certcell{Hashicorp}{Terraform Associate}
+    % \\ \hline
+    % \certcell{PCEP}{Python Professional 1}
+    % &
+    % \certcell{Databricks}{Data Engineer Professional}
+    % \\ \hline
+    % \certcell{Databricks}{Data Analyst Associate}
+    % &
+    % \certcell{Databricks}{Machine Learning Associate}
+    % \\ \hline
+    % \certcell{AWS}{Cloud Practitioner}
+    % &
+    % \certcell{AWS}{SysOps Administrator Associate}
+    % \\
+\end{tabular}
 
 \cvsignature
 \end{document}
